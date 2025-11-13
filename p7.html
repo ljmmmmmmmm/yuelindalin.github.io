@@ -1,0 +1,211 @@
+<!DOCTYPE html> <!-- 声明文档类型为HTML5，确保浏览器正确渲染页面 -->
+<html lang="zh-CN"> <!-- HTML文档根元素，设置语言为中文（中国） -->
+<head> <!-- 文档头部，包含元数据和样式信息 -->
+    <meta charset="UTF-8"> <!-- 设置字符编码为UTF-8，支持中文和特殊字符显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 视口设置，确保响应式设计在不同设备上正确显示 -->
+    <title>xxxxxxx</title> <!-- 页面标题，显示在浏览器标签页上 -->
+    <style> /* 开始内联CSS样式 */
+        /* 基础样式重置 */ /* CSS注释：清除浏览器默认样式 */
+        * { /* 通用选择器，匹配所有元素 */
+            margin: 0; /* 清除所有元素的外边距 */
+            padding: 0; /* 清除所有元素的内边距 */
+            box-sizing: border-box; /* 设置盒模型为边框盒，宽度高度包含padding和border */
+            font-family: 'Alegreya', serif; /* 设置字体栈，从左到右降级使用 */
+        }
+
+        body { /* 页面主体样式 */
+            background-color: #f8f9fa; /* 设置背景颜色为浅灰色 */
+            color: #333; /* 设置文字颜色为深灰色 */
+            line-height: 1.6; /* 设置行高为1.6倍，提高可读性 */
+        }
+
+        /* 统一导航栏样式 - 与projects.html保持一致 */ /* CSS注释：导航栏样式统一 */
+        nav { /* 导航栏容器样式 */
+            background-color: #fff; /* 设置背景色为白色 */
+            padding: 1.5rem 0; /* 设置上下内边距为1.5rem，左右为0 */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 添加底部阴影效果，深度为2px，轻微透明度 */
+            position: sticky; /* 设置粘性定位，滚动时保持可见 */
+            top: 0; /* 距离顶部0像素 */
+            z-index: 100; /* 设置较高的堆叠顺序，确保在其他元素上方 */
+        }
+
+        nav ul { /* 导航栏无序列表样式 */
+            list-style: none; /* 移除列表项默认的标记符号 */
+            display: flex; /* 使用弹性布局 */
+            justify-content: center; /* 水平居中对齐子元素 */
+            max-width: 1200px; /* 设置最大宽度为1200px */
+            margin: 0 auto; /* 水平居中对齐：上下边距0，左右自动 */
+        }
+
+        nav li { /* 导航栏列表项样式 */
+            margin: 0 1.5rem; /* 设置左右外边距为1.5rem，上下为0 */
+        }
+
+        nav a { /* 导航栏链接样式 */
+            color: #333; /* 设置链接颜色为深灰色 */
+            text-decoration: none; /* 移除下划线 */
+            font-size: 1.1rem; /* 设置字体大小为1.1rem */
+            font-weight: 500; /* 设置字体重量为中等 */
+            padding: 0.5rem 0; /* 设置上下内边距为0.5rem，左右为0 */
+            position: relative; /* 设置相对定位，为伪元素提供参考 */
+            transition: color 0.3s ease; /* 设置颜色过渡效果，时长0.3秒，缓动函数 */
+        }
+
+        nav a:hover { /* 导航栏链接悬停状态 */
+            color: #666; /* 悬停时颜色变为中灰色 */
+        }
+
+        nav a::after { /* 导航栏链接伪元素，用于下划线效果 */
+            content: ''; /* 必须设置内容，即使是空字符串 */
+            position: absolute; /* 绝对定位 */
+            width: 0; /* 初始宽度为0 */
+            height: 2px; /* 设置高度为2px */
+            bottom: 0; /* 距离底部0像素 */
+            left: 0; /* 距离左侧0像素 */
+            background-color: #333; /* 设置背景色为深灰色 */
+            transition: width 0.3s ease; /* 设置宽度过渡效果 */
+        }
+
+        nav a:hover::after { /* 导航栏链接悬停时伪元素状态 */
+            width: 100%; /* 悬停时宽度变为100% */
+        }
+
+        /* 主内容区域 */ /* CSS注释：主内容区样式 */
+        .container { /* 主容器样式 */
+            max-width: 900px; /* 设置最大宽度为900px */
+            margin: 0 auto; /* 水平居中对齐 */
+            padding: 3rem 2rem; /* 设置内边距：上下3rem，左右2rem */
+        }
+
+        /* 项目标题区域 */ /* CSS注释：项目标题样式 */
+        .project-header { /* 项目标题容器样式 */
+            text-align: center; /* 文字居中对齐 */
+            margin-bottom: 3rem; /* 设置底部外边距为3rem */
+        }
+
+        .project-header h1 { /* 项目主标题样式 */
+            font-size: 2.5rem; /* 设置字体大小为2.5rem */
+            margin-bottom: 1rem; /* 设置底部外边距为1rem */
+            color: #222; /* 设置文字颜色为接近黑色 */
+        }
+
+        /* 图片和按钮容器 */ /* CSS注释：内容包装器样式 */
+        .content-wrapper { /* 内容包装器样式 */
+            position: relative; /* 设置相对定位，为子元素的绝对定位提供参考 */
+            margin-bottom: 2rem; /* 设置底部外边距为2rem */
+        }
+
+        /* 返回按钮 - 放置在图片上方外部 */ /* CSS注释：返回按钮样式 */
+        .back-button { /* 返回按钮样式 */
+            position: absolute; /* 绝对定位，相对于.content-wrapper */
+            top: -60px; /* 向上移动60px，放置在图片上方 */
+            left: 0; /* 距离左侧0像素 */
+            width: 40px; /* 设置宽度为40px */
+            height: 40px; /* 设置高度为40px */
+            background-color: rgba(0, 0, 0, 0); /* 设置背景为完全透明 */
+            color: rgb(0, 0, 0); /* 设置文字颜色为黑色 */
+            border: none; /* 无边框 */
+            border-radius: 50%; /* 设置圆形边框 */
+            display: flex; /* 使用弹性布局 */
+            justify-content: center; /* 水平居中对齐子元素 */
+            align-items: center; /* 垂直居中对齐子元素 */
+            font-size: 1.2rem; /* 设置字体大小为1.2rem */
+            font-weight: bold; /* 设置字体重量为粗体 */
+            cursor: pointer; /* 鼠标指针为手型 */
+            text-decoration: none; /* 移除下划线 */
+            transition: all 0.3s ease; /* 设置所有属性过渡效果，时长0.3秒 */
+            z-index: 10; /* 设置较高的堆叠顺序 */
+        }
+
+        .back-button:hover { /* 返回按钮悬停状态 */
+            background-color: rgba(109, 105, 105, 0.9); /* 悬停时背景色变为深灰色 */
+            transform: scale(1.1); /* 悬停时放大1.1倍 */
+        }
+
+        /* 图片容器 */ /* CSS注释：图片容器样式 */
+        .image-container { /* 图片容器样式 */
+            width: 100%; /* 宽度100%填充父容器 */
+            border-radius: 8px; /* 设置8px圆角 */
+            overflow: hidden; /* 隐藏溢出内容 */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* 添加阴影效果：水平偏移0，垂直偏移5px，模糊15px */
+        }
+
+        .image-container img { /* 图片样式 */
+            width: 100%; /* 宽度100%填充容器 */
+            height: auto; /* 高度自动，保持原始比例 */
+            display: block; /* 设置为块级元素 */
+        }
+
+        /* 文字描述 */ /* CSS注释：文字内容样式 */
+        .text-content { /* 文字内容样式 */
+            font-size: 1.5rem; /* 设置字体大小为1.5rem */
+            color: #333; /* 设置文字颜色为深灰色 */
+            font-weight: 500; /* 设置字体重量为中等 */
+            text-align: center; /* 文字居中对齐 */
+            margin-top: 1.5rem; /* 设置顶部外边距为1.5rem */
+        }
+
+        /* 响应式设计 */ /* CSS注释：移动端适配样式 */
+        @media (max-width: 768px) { /* 媒体查询：屏幕宽度小于等于768px时应用 */
+            .container { /* 主容器响应式样式 */
+                padding: 2rem 1rem; /* 设置内边距：上下2rem，左右1rem */
+            }
+            
+            .project-header h1 { /* 项目主标题响应式样式 */
+                font-size: 2rem; /* 设置字体大小为2rem */
+            }
+            
+            .back-button { /* 返回按钮响应式样式 */
+                top: -50px; /* 向上移动50px */
+                width: 35px; /* 设置宽度为35px */
+                height: 35px; /* 设置高度为35px */
+                font-size: 1rem; /* 设置字体大小为1rem */
+            }
+            
+            /* 响应式导航栏 */ /* CSS注释：导航栏移动端适配 */
+            nav ul { /* 导航栏无序列表响应式样式 */
+                flex-wrap: wrap; /* 允许子元素换行 */
+            }
+            
+            nav li { /* 导航栏列表项响应式样式 */
+                margin: 0.5rem 1rem; /* 设置外边距：上下0.5rem，左右1rem */
+            }
+        }
+    </style> <!-- 结束内联CSS样式 -->
+</head> <!-- 头部结束 -->
+<body> <!-- 文档主体开始 -->
+    <header> <!-- 页面顶部区域，通常包含网站标识和导航 -->
+        <nav> <!-- 导航栏容器，包含网站主要导航链接 -->
+            <ul> <!-- 导航栏无序列表 -->
+                <li><a href="index.html">Home</a></li> <!-- 列表项，包含首页链接 -->
+                <li><a href="projects.html">Project List</a></li> <!-- 列表项，包含项目列表链接 -->
+                <li><a href="research.html">Research</a></li> <!-- 列表项，包含研究页面链接 -->
+                <li><a href="publication.html">Publication</a></li> <!-- 列表项，包含出版物页面链接 -->
+                <li><a href="about.html">About</a></li> <!-- 列表项，包含关于我页面链接 -->
+            </ul> <!-- 无序列表结束 -->
+        </nav> <!-- 导航栏结束 -->
+    </header> <!-- 页面顶部区域结束 -->
+
+    <main> <!-- 页面主内容区域 -->
+        <div class="container"> <!-- 主内容容器，限制最大宽度并居中 -->
+            <div class="project-header"> <!-- 项目标题区域 -->
+                <h1>xxxxxxx</h1> <!-- 项目主标题，需替换为实际项目名称 -->
+            </div> <!-- 项目标题区域结束 -->
+            
+            <div class="content-wrapper"> <!-- 内容和按钮包装器 -->
+                <!-- 返回按钮 - 使用小于号表示返回箭头 -->
+                <a href="projects.html" class="back-button" title="返回项目列表">&lt;</a> <!-- 返回项目列表的链接按钮 -->
+                
+                <!-- 图片容器 -->
+                <div class="image-container"> <!-- 图片容器，包含项目图片 -->
+                    <img src="C:\Users\林家铭\Desktop\projects\7.png" alt="现代住宅设计"> <!-- 项目图片，需确保路径正确 -->
+                </div> <!-- 图片容器结束 -->
+            </div> <!-- 内容和按钮包装器结束 -->
+            
+            <div class="text-content"> <!-- 文字内容区域 -->
+                <p>xxxxxxxx</p> <!-- 项目描述文字，需替换为实际描述内容 -->
+            </div> <!-- 文字内容区域结束 -->
+        </div> <!-- 主内容容器结束 -->
+    </main> <!-- 页面主内容区域结束 -->
+</body> <!-- 文档主体结束 -->
+</html> <!-- HTML文档结束 -->

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project List - Architectural Portfolio</title>
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Alegreya', serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background-color: #fff;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav li {
+            margin: 0 1.5rem;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #666;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #333;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* 主内容区域 */
+        .container {
+            max-width: 1400px; /* 扩大容器最大宽度以容纳更大的图片 */
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 项目网格布局 - 两行三列，扩大间隙 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5rem 8rem; /* 调整间隙为更合理的值 */
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: transparent;
+            border: none;
+            overflow: hidden;
+            box-shadow: none;
+            transition: none;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* 修改图片容器 - 使用padding技巧创建正方形 */
+        .project-image {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            /* 使用padding-bottom技巧创建正方形容器 */
+            padding-bottom: 100%; /* 关键：创建正方形高宽比 */
+        }
+        
+        /* 为图片链接添加样式 */
+        .project-image a {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 确保图片覆盖整个正方形区域 */
+            transition: transform 0.5s ease;
+            border-radius: 0;
+        }
+
+        /* 增强图片放大效果 */
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        /* 修改编号样式 - 变为不可点击的纯文本 */
+        .project-number-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 0.5rem;
+            padding: 0 0.5rem;
+        }
+
+        .project-number {
+            background: rgba(0, 0, 0, 0);
+            color: #000000;
+            padding: 0.3rem 0.8rem;
+            border-radius: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: default;
+            display: inline-block;
+            transition: none;
+        }
+
+        /* 移除数字的悬停效果 */
+        .project-number:hover {
+            background: rgba(0, 0, 0, 0);
+            transform: none;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 100%;
+                padding: 3rem 1.5rem;
+            }
+            
+            .projects-grid {
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .container {
+                padding: 2rem 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav li {
+                margin: 0.5rem 1rem;
+            }
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+            color: #000;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" style="font-weight: bold; color: #000;">Project List</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publication.html">Publication</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+            </div>
+
+            <div class="projects-grid">
+                <!-- 项目1 - 图片现在有链接功能 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <a href="p1.html">
+                            <img src="C:\Users\林家铭\Desktop\projects\1.png" alt="木结构建筑内部">
+                        </a>
+                    </div>
+                    <div class="project-number-container">
+                        <span class="project-number">01</span>
+                    </div>
+                </div>
+
+                <!-- 项目2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <a href="p2.html">
+                            <img src="C:\Users\林家铭\Desktop\projects\2.png" alt="现代高层建筑局部">
+                        </a>
+                    </div>
+                    <div class="project-number-container">
+                        <span class="project-number">02</span>
+                    </div>
+                </div>
+
+                <!-- 项目3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <a href="p3.html">
+                            <img src="C:\Users\林家铭\Desktop\projects\3.png" alt="社区俯瞰图">
+                        </a>
+                    </div>
+                    <div class="project-number-container">
+                        <span class="project-number">03</span>
+                    </div>
+                </div>
+
+                <!-- 项目4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <a href="p4.html">
+                            <img src="C:\Users\林家铭\Desktop\projects\4.png" alt="抽象线条草图">
+                        </a>
+                    </div>
+                    <div class="project-number-container">
+                        <span class="project-number">04</span>
+                    </div>
+                </div>
+
+                <!-- 项目5 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <a href="p5.html">
+                            <img src="C:\Users\林家铭\Desktop\projects\5.png" alt="平面功能布局">
+                        </a>
+                    </div>
+                    <div class="project-number-container">
+                        <span class="project-number">05</span>
+                    </div>
+                </div>
+
+                <!-- 项目6 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <a href="p6.html">
+                            <img src="C:\Users\林家铭\Desktop\projects\6.png" alt="多层立体绿化建筑外观">
+                        </a>
+                    </div>
+                    <div class="project-number-container">
+                        <span class="project-number">06</span>
+                    </div>
+                </div>
+
+                <!-- 项目7 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <a href="p7.html">
+                            <img src="C:\Users\林家铭\Desktop\projects\7.png" alt="多层立体绿化建筑外观">
+                        </a>
+                    </div>
+                    <div class="project-number-container">
+                        <span class="project-number">07</span>
+                    </div>
+                </div>
+
+                <!-- 项目8 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <a href="p8.html">
+                            <img src="C:\Users\林家铭\Desktop\projects\8.png" alt="多层立体绿化建筑外观">
+                        </a>
+                    </div>
+                    <div class="project-number-container">
+                        <span class="project-number">08</span>
+                    </div>
+                </div>
+
+                <!-- 项目9 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <a href="p9.html">
+                            <img src="C:\Users\林家铭\Desktop\projects\9.png" alt="多层立体绿化建筑外观">
+                        </a>
+                    </div>
+                    <div class="project-number-container">
+                        <span class="project-number">09</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 yuelindalin. All rights reserved.</p>
+    </footer>
+</body>
+</html>
