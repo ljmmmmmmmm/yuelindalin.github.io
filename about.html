@@ -126,14 +126,14 @@
         }
 
         .resume-item h3 {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
             margin-bottom: 2px;
         }
 
         .resume-item .date-location {
             font-style: italic;
-            font-size: 11px;
+            font-size: 13px;/*11*/
             margin-bottom: 4px;
         }
 
@@ -144,7 +144,7 @@
 
         .resume-item li {
             margin-bottom: 4px;
-            font-size: 11px;
+            font-size: 13px;/*11*/
             text-align: justify;
             position: relative;
         }
@@ -158,12 +158,12 @@
             color: #000;
         }
 
-        /* 新增：研究主题加粗样式 */
+        /* 研究主题加粗样式 */
         .resume-item .research-topic {
             font-weight: 700; /* 稍微加粗，比bold轻一点 */
         }
 
-        /* 新增：研究主题缩进样式 */
+        /* 研究主题缩进样式 */
         .resume-item .indented-topic {
             padding-left: 20px; /* 增加缩进 */
             margin-bottom: 6px; /* 增加与下一行的间距 */
@@ -174,11 +174,11 @@
             margin-top: 2px;
             margin-bottom: 6px;
             padding-left: 20px; /* 与主题缩进保持一致 */
-            font-size: 11px;
+            font-size: 13px;/*11*/
             text-align: justify;
         }
 
-        /* 新增：研究主题与日期在同一行的样式 */
+        /* 研究主题与日期在同一行的样式 */
         .topic-with-date {
             display: flex;
             justify-content: space-between;
@@ -188,7 +188,7 @@
             position: relative; /* 为小黑点定位 */
         }
 
-        /* 新增：为指定文本添加小黑点 */
+        /* 为指定文本添加小黑点 */
         .topic-with-date:before,
         .designer-info:before {
             content: "•";
@@ -200,17 +200,18 @@
 
         .topic-text {
             flex: 1;
+            font-size: 13px;/*11px*/
             font-weight: 600;
         }
 
         .topic-date {
             font-style: normal;
-            font-size: 11px;
+            font-size: 13px;/*11px*/
             margin-left: 15px;
             white-space: nowrap;
         }
 
-         /* 新增：设计师信息在同一行的样式 */
+         /* 设计师信息在同一行的样式 */
         .designer-info {
             display: flex;
             align-items: center;
@@ -221,14 +222,16 @@
 
         .designer-label {
             font-weight: 600;
+            font-size: 13px;/*11px*/
             margin-right: 5px;
         }
 
         .designer-name {
             font-weight: normal;
+            font-size: 13px;/*11px*/
         }
 
-        /* 新增：项目标题与日期在同一行的样式 */
+        /* 项目标题与日期在同一行的样式 */
         .project-title-with-date {
             display: flex;
             justify-content: space-between;
@@ -237,37 +240,42 @@
         }
 
         .project-title {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
         }
 
         .project-date {
             font-style: normal;
-            font-size: 11px;
+            font-size: 13px;
             white-space: nowrap;
         }
 
-         /* 修改：将两列布局改为单列 */
+         /* 单列 */
         .single-column {
             display: block;
+            max-width: 1000px;
         }
 
         .skills-list {
             list-style-type: none;
             padding-left: 0;
+            max-width: 1000px;
         }
 
         .skills-list li {
             margin-bottom: 4px;
-            font-size: 11px;
+            font-size: 13px;
+            max-width: 1000px;
         }
 
         .small-brackets {
-            font-size: 0.8em; /* 缩小括号内字体大小 */
+            font-size: 0.75em; /* 缩小括号内字体大小 */
+            max-width: 2000px;
         }
 
         /* 教育信息在同一行显示的样式 */
         .education-item {
+            font-size: 13px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -275,11 +283,13 @@
         }
 
         .education-name {
+            font-size: 13px;
             flex: 1;
             font-weight: normal;
         }
 
         .education-date {
+            font-size: 13px;
             font-style: normal;
             margin-left: 20px;
             white-space: nowrap;
