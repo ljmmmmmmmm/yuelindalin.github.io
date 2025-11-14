@@ -75,46 +75,236 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 3rem 2rem;
-            min-height: 60vh; /* 确保容器有足够高度 */
+            min-height: 60vh;
         }
 
-        /* 页面标题区域 */
-        .page-header {
-            text-align: center;
-            margin-bottom: 3rem;
+        /* PDF样式模拟 - 与PDF简历排版完全一致 */
+        .pdf-resume {
+            font-family: 'Alegreya', serif;
+            color: #000;
+            line-height: 1.2;
+            font-size: 12px;
         }
 
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #222;
+        /* 简历头部信息 - 修改为左对齐 */
+        .resume-header {
+            text-align: left; /* 修改：从center改为left */
+            margin-bottom: 20px;
+        }
+
+        .resume-header h1 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .resume-header .contact {
+            font-size: 11px;
+            margin-bottom: 3px;
+        }
+
+        .resume-header .title {
+            font-size: 12px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        /* 简历各部分标题 */
+        .resume-section h2 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        /* 简历项目 */
+        .resume-item {
+            margin-bottom: 12px;
+        }
+
+        .resume-item h3 {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .resume-item .date-location {
+            font-style: italic;
+            font-size: 11px;
+            margin-bottom: 4px;
+        }
+
+        .resume-item ul {
+            list-style-type: none;
+            padding-left: 15px;
+        }
+
+        .resume-item li {
+            margin-bottom: 4px;
+            font-size: 11px;
+            text-align: justify;
+            position: relative;
+        }
+
+        /* 项目符号样式 - 调整为更大 */
+        .resume-item li:before {
+            content: "•";
+            position: absolute;
+            left: -12px;
+            font-size: 14px;
+            color: #000;
+        }
+
+        /* 新增：研究主题加粗样式 */
+        .resume-item .research-topic {
+            font-weight: 700; /* 稍微加粗，比bold轻一点 */
+        }
+
+        /* 新增：研究主题缩进样式 */
+        .resume-item .indented-topic {
+            padding-left: 20px; /* 增加缩进 */
+            margin-bottom: 6px; /* 增加与下一行的间距 */
+        }
+
+        /* 描述文本样式 */
+        .description {
+            margin-top: 2px;
+            margin-bottom: 6px;
+            padding-left: 20px; /* 与主题缩进保持一致 */
+            font-size: 11px;
+            text-align: justify;
+        }
+
+        /* 新增：研究主题与日期在同一行的样式 */
+        .topic-with-date {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            position: relative; /* 为小黑点定位 */
+        }
+
+        /* 新增：为指定文本添加小黑点 */
+        .topic-with-date:before,
+        .designer-info:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .topic-text {
+            flex: 1;
             font-weight: 600;
         }
 
-        .empty-content {
+        .topic-date {
+            font-style: normal;
+            font-size: 11px;
+            margin-left: 15px;
+            white-space: nowrap;
+        }
+
+         /* 新增：设计师信息在同一行的样式 */
+        .designer-info {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            margin-bottom: 4px;
+            position: relative; /* 为小黑点定位 */
+        }
+
+        .designer-label {
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .designer-name {
+            font-weight: normal;
+        }
+
+        /* 新增：项目标题与日期在同一行的样式 */
+        .project-title-with-date {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2px;
+        }
+
+        .project-title {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .project-date {
+            font-style: normal;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+         /* 修改：将两列布局改为单列 */
+        .single-column {
+            display: block;
+        }
+
+        .skills-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .skills-list li {
+            margin-bottom: 4px;
+            font-size: 11px;
+        }
+
+        .small-brackets {
+            font-size: 0.8em; /* 缩小括号内字体大小 */
+        }
+
+        /* 教育信息在同一行显示的样式 */
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .education-name {
+            flex: 1;
+            font-weight: normal;
+        }
+
+        .education-date {
+            font-style: normal;
+            margin-left: 20px;
+            white-space: nowrap;
+            font-weight: normal;
+        }
+
+        /* 调整教育部分与下一节的间距 */
+        #education-section {
+            margin-bottom: 20px;
+        }
+
+        /* 页脚样式 */
+        footer {
             text-align: center;
-            color: #999;
-            font-style: italic;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+            color: #000;
+            background: #fff;
         }
 
-        /* 页脚样式 */ /* CSS注释：页脚样式 */
-        footer { /* 页脚样式 */
-            text-align: center; /* 文字居中对齐 */
-            padding: 2rem; /* 设置内边距为2rem */
-            margin-top: 3rem; /* 设置顶部外边距为3rem */
-            border-top: 1px solid #eee; /* 添加顶部边框为1px浅灰色实线 */
-            color: #000; /* 设置文字颜色为黑色 */
-            background: #fff; /* 设置背景色为白色 */
-        }
-
-        /* 响应式设计 */
+         /* 响应式设计 */
         @media (max-width: 768px) {
             .container {
                 padding: 2rem 1rem;
-            }
-            
-            .page-header h1 {
-                font-size: 2rem;
             }
             
             nav ul {
@@ -123,6 +313,45 @@
             
             nav li {
                 margin: 0.5rem 1rem;
+            }
+            
+            .two-column {
+                flex-direction: column;
+            }
+            
+            .column {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            /* 移动端调整教育信息布局 */
+            .education-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .education-date {
+                margin-left: 0;
+                margin-top: 2px;
+            }
+            
+            /* 移动端调整缩进 */
+            .resume-item .indented-topic {
+                padding-left: 15px;
+            }
+            
+            .description {
+                padding-left: 15px;
+            }
+            
+            /* 移动端调整项目标题与日期布局 */
+            .project-title-with-date {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .project-date {
+                margin-top: 2px;
             }
         }
     </style>
@@ -141,7 +370,151 @@
     </header>
 
     <main>
-        
+        <div class="container">
+            <div class="pdf-resume">
+                <!-- 简历头部 - 现在为左对齐 -->
+                <div class="resume-header">
+                    <h1>YUE LINDA LIN</h1>
+                    <h3>yuelin02@outlook.com</h3>
+                    <h3>Cornell B.Arch Graduate / LEED Green Associate / Research Assistant at Cornell AAP</h3>
+                </div>
+
+                <!-- 教育背景 -->
+                <div class="resume-section" id="education-section">
+                    <h2>EDUCATION</h2>
+                    <div class="education-item">
+                        <div class="education-name">Cornell University Bachelor of Architecture</div>
+                        <div class="education-date">08/2020-05/2025</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-name">St.Francis DeSales High School</div>
+                        <div class="education-date">08/2017-05/2020</div>
+                    </div>
+                </div>
+
+                <!-- 专业经验 - 按照PDF内容重新构建 -->
+                <div class="resume-section">
+                    <h2>PROFESSIONAL EXPERIENCE</h2>
+                    
+                    <!-- Housing Innovation Lab -->
+                    <div class="resume-item">
+                        <h3>Housing Innovation Lab</h3>
+                        <ul>
+                            <li>Research Assistant</li>
+                            <!-- 添加缩进和加粗样式 -->
+                            <div class="topic-with-date">
+                                <span class="topic-text">Research Topic A: Framework for Quantifying Polyvalence in Modern Housing</span>
+                                <span class="topic-date">08/2024-Present New York, USA.</span>
+                            </div>
+                            <div class="description">Developing a measurable framework for polyvalence in housing design, focusing on how residential spaces can support diverse uses without structural changes. My research integrates spatial analysis, regulatory constraints, and architectural theory to evaluate adaptability in contemporary apartment layouts.</div>
+                            
+                            <div class="topic-with-date">
+                                <span class="topic-text">Research Topic B: NYC Housing Retrofitting Design Guideline Examination</span>
+                                <span class="topic-date">05/2024 - 08/2024 New York, USA.</span>
+                            </div>
+                            <div class="description">This research analyzes 312 New York housing prototypes, visualizing retrofitting requirements per HPD guidelines, retrofitting standards, and Local Law 97. Conducted data analysis on daylight, privacy, and views in relation to floor height, orientation, and surroundings.</div>
+                            
+                            <div class="topic-with-date">
+                                <span class="topic-text">Independent Study: Dimension and polyvalency exploration of the residential</span>
+                                <span class="topic-date">01/2024 - 05/2024 New York, USA.</span>
+                            </div>
+                            <div class="description">This independent study based on Ernst Neufert's Architect's Data, exploring the relationship between humans and spatial dimensions. The research aims to identify minimal, healthy living dimensions for addressing global housing crises, focusing on affordability and flexibility through space optimization.</div>
+                        </ul>
+                    </div>
+
+                    <!-- MUME Design -->
+                    <div class="resume-item">
+                        <h3>MUME Design</h3>
+                        <ul>
+                            <li>Intern</li>
+
+                            <div class="topic-with-date">
+                                <span class="topic-text">Research Team:</span>
+                                <span class="topic-date">05/2023 - 07/2023 Guizhou, CHN.</span>
+                            </div>
+                            <div class="description">Conducted research on vernacular construction methods, analyzing and adapting ancient Chinese timber structures for modern timber construction. Findings were presented in a firm exhibition.</div>
+                            
+                            <div class="topic-with-date">
+                                <span class="topic-text">Documentation Team:</span>
+                                <span class="topic-date">05/2023 - 07/2023 Guizhou, CHN.</span>
+                            </div>
+                            <div class="description">Co-Led a documentation team to study and record traditional timber craftsmanship, investigating its historical and cultural significance through on-site research. The documentation is currently in the editing phase.</div>
+                            
+                        </ul>
+                    </div>
+
+                     <!-- The Pavilion - Built Project -->
+                    <div class="resume-item">
+                        <div class="project-title-with-date">
+                            <span class="project-title">The Pavilion - Built Project</span>
+                            <span class="project-date">05/2024 New York, USA.</span>
+                        </div>
+                        <ul>
+                            <!-- 修改：使用新的布局将Designer标签和名字放在同一行 -->
+                            <div class="designer-info">
+                                <span class="designer-label">Designer:</span>
+                                <span class="designer-name">Yue Lin, Emma Silverblatt(Studio Instructor)</span>
+                            </div>
+                            
+                            <div class="designer-info">
+                                <span class="designer-label">Collaborators:</span>
+                                <span class="designer-name">Amber Su, Kewei Xu</span>
+                            </div>
+                            
+                            <div class="designer-info">
+                                <span class="designer-label">Construction Team:</span>
+                                <span class="designer-name">the Home Depot Construction Team, Trumansburg Council, All the Volunteers.</span>
+                            </div>
+                            
+                            <div class="description">The pavilion, designed in collaboration with Professor Emma Silverblatt, serves as a shaded, open-air retreat in Trumansburg's trailer park, offering natural ventilation, shade, and a welcoming space for relaxation and community connection.</div>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 领导力与活动 -->
+                <div class="resume-section">
+                    <h2>LEADERSHIP & ACTIVITIES</h2>
+                    
+                    <div class="resume-item">
+                        <div class="project-title-with-date">
+                            <span class="project-title">Cornell Chinese Drama Society</span>
+                            <span class="project-date">01/2023-05/2023 New York, USA.</span>
+                        </div>
+                        <ul>
+                            <div class="designer-info">
+                                <span class="designer-label">Scenic Design Director</span>
+                            </div>
+                            <div class="description">Participated in the role of Scenic and Stage Design Director for the show 'Rhino in Love' by Jinghui Meng, responsible for scenic design, poster creation, art direction, and props management.</div>
+                        </ul>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="project-title-with-date">
+                            <span class="project-title">NOMAS</span>
+                            <span class="project-date">06/2022-05/2025 New York, USA.</span>
+                        </div>
+                        <ul>
+                            <div class="designer-info">
+                                <span class="designer-label">NOMAS 2022 Competition Team Member [2nd Prize]</span>
+                            </div>
+                            <div class="description">A member of the 2022 Cornell NOMAS architecture competition: topic on designing a cultural center to preserve the history of North Nashville and a new bridge to serve as a landmark and monument for the community.</div>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 附加技能 - 改为单列布局 -->
+                <div class="resume-section">
+                    <h2>ADDITIONAL SKILLS</h2>
+                    <div class="single-column">
+                        <ul class="skills-list">
+                            <li class="language-skills"><strong>Languages:</strong> Mandarin <span class="small-brackets">(Native)</span>; Cantonese <span class="small-brackets">(Native)</span>; English <span class="small-brackets">(Full professional proficiency)</span>; Korean <span class="small-brackets">(Limited working proficiency)</span>; German <span class="small-brackets">(Elementary)</span></li>
+                            <li><strong>Skills:</strong> Rhino 7; Python; R; Grasshopper; Adobe Suite; Revit; VRay; Vectorworks; SketchUp; Excel.</li>
+                            <li><strong>Other Interests:</strong> Model Making; Scenic Design; Video Production; Tennis; Piano; Guitar; Car Racing.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
