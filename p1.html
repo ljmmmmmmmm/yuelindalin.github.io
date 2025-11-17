@@ -10,11 +10,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Alegreya', serif;
+            font-family: 'arial', serif;
         }
 
         body {
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             color: #333;
             line-height: 1.6;
         }
@@ -108,26 +108,27 @@
             margin-bottom: 2rem;
         }
 
-        /* 返回按钮 - 放置在图片上方外部 */
+        /* 修改返回按钮样式，使其固定在页面左上角 */
         .back-button {
-            position: absolute;
-            top: -60px;
-            left: 0;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(0, 0, 0, 0);
+            position: fixed; /* 改为fixed定位，相对于视口 */
+            top: 100px; /* 距离顶部100px，在导航栏下方 */
+            left: 280px; /* 距离左侧20px */
+            width: auto; /* 宽度自适应内容 */
+            height: auto; /* 高度自适应 */
+            background-color: rgba(0, 0, 0, 0); /* 半透明黑色背景 */
             color: rgb(0, 0, 0);
             border: none;
-            border-radius: 50%;
+            border-radius: 5px;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 99; /* 确保在内容上层但低于导航栏 */
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            z-index: 10;
         }
 
         .back-button:hover {
@@ -290,22 +291,14 @@
     </header>
 
     <main>
+        <a href="projects.html" class="back-button">&#10094;</a>
+
         <div class="container">
             <div class="project-header">
                 <h5><strong>Live! Share! House-In Hongkong</strong></h5>
                 <h5>2025 SPRING</h5>
                 <h5>Thesis Advisors: Katharina Maria Kral; Marta H. Wisniewska</h5>
                 <h5>Location: Hong Kong SAR.</h5>
-            </div>
-            
-            <div class="content-wrapper">
-                <!-- 返回按钮 - 使用小于号表示返回箭头 -->
-                <a href="projects.html" class="back-button" title="返回项目列表">&lt;</a>
-                
-                <!-- 图片容器 -->
-                <div class="image-container">
-                    <!-- 图片占位符 -->
-                </div>
             </div>
             
             <div class="text-content">
@@ -315,9 +308,10 @@
             </div>
             
             <div class="project-header info-section">
+                <h5>Coming soon...</h5>
+                <!--
                 <h5>General Information About Hongkong</h5>
                 
-                <!-- 修改：向下调整文本位置并加粗冒号前的文本 -->
                 <div class="info-text">
                     <p>HONG KONG</p>
                     <p><strong>Location:</strong> South Coast of Mainland China</p>
@@ -336,7 +330,7 @@
                     <p>7. Tsuen Wan District</p>
                     <p>8. Tuen Mun District</p>
                     <p>9. Yuen Long District</p>
-                </div>
+                </div>-->
             </div>
         </div>
     </main>
