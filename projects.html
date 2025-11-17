@@ -10,11 +10,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Alegreya', serif;
+            font-family: 'arial', serif;
         }
 
         body {
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             color: #333;
             line-height: 1.6;
         }
@@ -28,7 +28,7 @@
             top: 0;
             z-index: 100;
         }
-            
+
         nav ul {
             list-style: none;
             display: flex;
@@ -118,6 +118,11 @@
             box-shadow: none;
         }
 
+        /* 增强图片放大效果 */
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
         /* 修改图片容器 - 使用padding技巧创建正方形 */
         .project-image {
             width: 100%;
@@ -145,11 +150,6 @@
             object-fit: cover; /* 确保图片覆盖整个正方形区域 */
             transition: transform 0.5s ease;
             border-radius: 0;
-        }
-
-        /* 增强图片放大效果 */
-        .project-card:hover .project-image img {
-            transform: scale(1.1);
         }
 
         /* 修改编号样式 - 变为不可点击的纯文本 */
@@ -256,7 +256,7 @@
                 <div class="project-card">
                     <div class="project-image">
                         <a href="p1.html">
-                            <img src="./1.png" alt="1">
+                            <img src="./PROJECT LOGOS.jpg" alt="1">
                         </a>
                     </div>
                     <div class="project-number-container">
@@ -268,7 +268,7 @@
                 <div class="project-card">
                     <div class="project-image">
                         <a href="p2.html">
-                            <img src="./2.png" alt="2">
+                            <img src="./PROJECT LOGOS2.jpg" alt="2">
                         </a>
                     </div>
                     <div class="project-number-container">
@@ -280,7 +280,7 @@
                 <div class="project-card">
                     <div class="project-image">
                         <a href="p3.html">
-                            <img src="./3.png" alt="3">
+                            <img src="./PROJECT LOGOS3.jpg" alt="3">
                         </a>
                     </div>
                     <div class="project-number-container">
@@ -292,7 +292,7 @@
                 <div class="project-card">
                     <div class="project-image">
                         <a href="p4.html">
-                            <img src="./4.png" alt="4">
+                            <img src="./PROJECT LOGOS4.jpg" alt="4">
                         </a>
                     </div>
                     <div class="project-number-container">
@@ -304,7 +304,7 @@
                 <div class="project-card">
                     <div class="project-image">
                         <a href="p5.html">
-                            <img src="./5.png" alt="5">
+                            <img src="./PROJECT LOGOS5.jpg" alt="5">
                         </a>
                     </div>
                     <div class="project-number-container">
@@ -316,7 +316,7 @@
                 <div class="project-card">
                     <div class="project-image">
                         <a href="p6.html">
-                            <img src="./6.png" alt="6">>
+                            <img src="./PROJECT LOGOS6.jpg" alt="6">
                         </a>
                     </div>
                     <div class="project-number-container">
@@ -324,41 +324,6 @@
                     </div>
                 </div>
 
-                <!-- 项目7 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="p7.html">
-                            <img src="./7.png" alt="7">
-                        </a>
-                    </div>
-                    <div class="project-number-container">
-                        <span class="project-number">07</span>
-                    </div>
-                </div>
-
-                <!-- 项目8 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="p8.html">
-                            <img src="./8.png" alt="8">
-                        </a>
-                    </div>
-                    <div class="project-number-container">
-                        <span class="project-number">08</span>
-                    </div>
-                </div>
-
-                <!-- 项目9 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="p9.html">
-                            <img src="./9.png" alt="9">
-                        </a>
-                    </div>
-                    <div class="project-number-container">
-                        <span class="project-number">09</span>
-                    </div>
-                </div>
             </div>
         </div>
     </main>
@@ -367,5 +332,4 @@
         <p>&copy; 2025 yuelindalin. All rights reserved.</p>
     </footer>
 </body>
-
 </html>
