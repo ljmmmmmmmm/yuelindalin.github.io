@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research - Academic Portfolio</title>
+    <title>Project List - Architectural Portfolio</title>
     <style>
         /* 基础样式重置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Alegreya', serif;
+            font-family: 'arial', serif;
         }
 
         body {
-            background-color: #fff;
-            color: #000;
+            background-color: #ffffff;
+            color: #333;
             line-height: 1.6;
         }
 
@@ -72,13 +72,11 @@
 
         /* 主内容区域 */
         .container {
-            max-width: 900px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 3rem 2rem;
-            min-height: 60vh;
+            padding: 3rem 2rem;/* 3 2 */
         }
 
-        /* 页面标题区域 */
         .page-header {
             text-align: center;
             margin-bottom: 3rem;
@@ -87,28 +85,89 @@
         .page-header h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #222;
             font-weight: 600;
+            color: #222;
         }
 
-        .empty-content {
-            text-align: center;
-            color: #999;
-            font-style: italic;
+        .page-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        /* 页脚样式 */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            border-top: 1px solid #eee;
+        /* 项目网格布局 - 改为单列垂直排列 */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;/* center */
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: transparent;
+            border: none;
+            overflow: hidden;
+            box-shadow: none;
+            transition: none;
+            position: relative;
+            width: 100%; /* 确保卡片宽度适应网格 */
+            max-width: 600px; /* 限制最大宽度 */
+        }
+
+        .project-card a {
+            font-weight: bold; /* 添加字体加粗 */
             color: #000;
-            background: #fff;
+            /*text-decoration: none;  移除下划线 */
+        }
+
+        .project-card:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .project-number {
+            background: rgba(0, 0, 0, 0);
+            color: #000000;
+            padding: 0.3rem 0.8rem;
+            border-radius: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: default;
+            display: inline-block;
+            transition: none;
         }
 
         /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 100%;
+                padding: 3rem 1.5rem;
+            }
+            
+            .projects-grid {
+                gap: 4rem; /* 中等屏幕减少间隙 */
+            }
+        }
+
+        @media (max-width: 992px) {
+            /* 修改：在992px以下保持两列布局 */
+            .projects-grid {
+                gap: 3rem;
+                grid-template-columns: repeat(2, 1fr); /* 保持两列 */
+            }
+        }
+
         @media (max-width: 768px) {
+            /* 修改：在768px以下改为单列布局，垂直堆叠 */
+            .projects-grid {
+                grid-template-columns: 1fr; /* 改为单列 */
+                gap: 2rem;
+                justify-items: center; /* 保持居中 */
+            }
+            
             .container {
                 padding: 2rem 1rem;
             }
@@ -124,6 +183,20 @@
             nav li {
                 margin: 0.5rem 1rem;
             }
+            
+            .project-card {
+                max-width: 300px; /* 移动端调整最大宽度 */
+            }
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+            color: #000;
+            background: #fff;
         }
     </style>
 </head>
@@ -141,7 +214,26 @@
     </header>
 
     <main>
-        
+        <div class="container">
+            <div class="page-header">
+            </div>
+
+            <div class="projects-grid">
+                <!-- 项目1 -->
+                <div class="project-card">
+                    <a href="re1.html">
+                        01 Minimum Housing Footprint
+                    </a>
+                </div>
+
+                <!-- 项目2 -->
+                <div class="project-card">
+                    <a href="re2.html">
+                        02 HPD Design Guideline Retrofit Index
+                    </a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
