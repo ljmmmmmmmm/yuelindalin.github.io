@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     /* 将所有字体替换为Alegreya */
-    font-family: 'Alegreya', serif;
+    font-family: 'arial', serif;
 }
 
 body {
@@ -12,9 +12,8 @@ body {
     color: #000;
     line-height: 1.6;
     /* 确保body也使用Alegreya字体 */
-    font-family: 'Alegreya', serif;
+    font-family: 'arial', serif;
 }
-
 /* 导航栏样式 */
 nav { /* 导航栏容器样式 */
     background-color: #fff; /* 设置背景色为白色 */
