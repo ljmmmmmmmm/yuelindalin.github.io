@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HPD Design Guideling Retrofit Index</title>
+    <title>2</title>
     <style>
         /* 修改图片尺寸设置 */
         .responsive-image {
@@ -101,11 +101,13 @@
             width: 100%;
         }
 
+        /**/
         /* 主内容区域 */
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 3rem 2rem;
+            margin-top: 250px;
         }
 
         /* 项目标题区域 */
@@ -113,12 +115,48 @@
             text-align: center;
             margin-bottom: 3rem;
         }
-
-        .project-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #222;
+        
+        .project-header h2 {
+            font-size: 1.7rem;/*1.7*/
+            margin-bottom: 3.5rem;/*2.5*/
+            color: #000000;
         }
+
+        .project-header h5 {
+            font-size: 0.9rem;
+            color: #000000;
+            font-weight: normal;
+            line-height: 1.1;/*1.4*/
+        }
+
+        /* 为第一个h5元素（Live! Share! House-In Hongkong）增加底部间距 */
+        .project-header h5:first-of-type {
+            font-size: 1.3rem;
+            margin-bottom: 3rem; /* 增加第一个h5元素的底部间距 */
+        }
+
+        /* 文字描述 */
+        .text-content {
+            font-size: 15px;/*15*/
+            line-height: 1.1;/*1.4*/
+            color: #000000;
+            font-weight: normal;
+            text-align: justify;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* 段落间距设置 */
+        .text-content p {
+            margin-bottom: 1em;
+        }
+
+        /* 专门针对最后一个段落的间距设置 */
+        .text-content p:last-child {
+            margin-bottom: 30rem;/*17*/
+        }
+
+        /**/
 
         /* 图片和按钮容器 */
         .content-wrapper {
@@ -198,8 +236,21 @@
     <main>
         <a href="research.html" class="back-button">&#10094;</a>
 
+        <div class="container">
+            <div class="project-header">
+                <h5><strong>HPD Design Guideline Retrofit Index</strong></h5>
+                <h5>2024 Summer</h5>
+                <h5>Research</h5>
+                <h5>Cornell University AAP_Housing Innovation Lab</h5>
+                <h5>Instructor: Katharina Kral</h5>
+            </div>
+            
+            <div class="text-content">
+                <p>This project studies the HPD Design Guideline for Preservation in order to build a retrofit index that separates substantial rehab from gut rehab in existing housing. I translate HPD triggers such as share of units under work, percent of envelope replacement, interior reconstruction scope, and needed EGC or LEED v4 Gold certification into clear quantitative thresh- olds. The resulting index becomes a tool to classify case study renovations by depth of intervention and estimate their impact on energy performance, tenant relocation needs, and long term building preservation.</p>
+            </div>
+        </div>
+
         <div class="image-container">
-            <img src="WEBSITE45.jpg" alt="1" class="responsive-image">
             <img src="WEBSITE46.jpg" alt="2" class="responsive-image">
             <img src="WEBSITE47.jpg" alt="3" class="responsive-image">
             <img src="WEBSITE48.jpg" alt="4" class="responsive-image">
@@ -212,7 +263,4 @@
         </div>
     </main>
 </body>
-
 </html>
-
-
