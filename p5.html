@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Pavilion</title>
+    <title>2</title>
     <style>
         /* 修改图片尺寸设置 */
         .responsive-image {
@@ -101,11 +101,13 @@
             width: 100%;
         }
 
+        /**/
         /* 主内容区域 */
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 3rem 2rem;
+            margin-top: 250px;
         }
 
         /* 项目标题区域 */
@@ -113,12 +115,56 @@
             text-align: center;
             margin-bottom: 3rem;
         }
-
-        .project-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #222;
+        
+        .project-header h2 {
+            font-size: 1.7rem;/*1.7*/
+            margin-bottom: 3.5rem;/*2.5*/
+            color: #000000;
         }
+
+        .project-header h5 {
+            font-size: 0.9rem;
+            color: #000000;
+            font-weight: normal;
+            line-height: 1.1;/*1.4*/
+        }
+
+        /* 关键修改：为第一个h5元素添加特殊样式，确保在同一行 */
+        .project-header h5:first-of-type {
+            font-size: 1.3rem;
+            margin-bottom: 3rem; /* 增加第一个h5元素的底部间距 */
+            white-space: nowrap; /* 防止换行 */
+        }
+
+        /* 关键修改：为/BUILT PROJECT/部分添加小字体样式 */
+        .built-project {
+            font-size: 0.8rem; /* 比主标题小 */
+            margin-left: 0.5rem; /* 添加一些间距 */
+            vertical-align: middle; /* 垂直对齐 */
+        }
+
+        /* 文字描述 */
+        .text-content {
+            font-size: 15px;/*15*/
+            line-height: 1.1;/*1.4*/
+            color: #000000;
+            font-weight: normal;
+            text-align: justify;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* 段落间距设置 */
+        .text-content p {
+            margin-bottom: 1em;
+        }
+
+        /* 专门针对最后一个段落的间距设置 */
+        .text-content p:last-child {
+            margin-bottom: 30rem;/*17*/
+        }
+
+        /**/
 
         /* 图片和按钮容器 */
         .content-wrapper {
@@ -179,6 +225,19 @@
             nav li {
                 margin: 0.5rem 1rem;
             }
+            
+            /* 移动端调整标题样式 */
+            .project-header h5:first-of-type {
+                font-size: 1.1rem;
+                white-space: normal; /* 移动端允许换行 */
+            }
+            
+            .built-project {
+                font-size: 0.7rem;
+                display: block; /* 移动端换行显示 */
+                margin-left: 0;
+                margin-top: 0.2rem;
+            }
         }
     </style>
 </head>
@@ -198,8 +257,23 @@
     <main>
         <a href="projects.html" class="back-button">&#10094;</a>
 
+        <div class="container">
+            <div class="project-header">
+                <!-- 关键修改：将/BUILT PROJECT/用span包裹并添加类名 -->
+                <h5><strong>The Pavilion</strong><span class="built-project">/BUILT PROJECT/</span></h5>
+                <h5>2024 SPRING</h5>
+                <h5>Designer: Yue Lin, Emma Silverblatt</h5>
+                <h5>Collaborators: Jiayu Su, Kewei Xu</h5>
+                <h5>Construction Team: Close to Home Studio Team, the HomeDepot Construction Team, volunteers</h5>
+                <h5>Location: Trumansburg, NY</h5>
+            </div>
+            
+            <div class="text-content">
+                <p>The local community proposed a playground to bring new life and gathering spaces to Trumansburg's trailer park neighborhood. As part of this vision, the pavilion—designed in collaboration with Professor Emma Silverblatt—serves as a shaded, open-air retreat where residents can relax and connect. With its separated roof structure, the pavilion allows natural ventilation and shade, inviting cool breezes and soft light into the space. This structure offers a welcoming spot for rest and play, fostering a sense of calm and community within the playground.</p>
+            </div>
+        </div>
+
         <div class="image-container">
-            <img src="WEBSITE28.jpg" alt="5" class="responsive-image">
             <img src="WEBSITE29.jpg" alt="6" class="responsive-image">
             <img src="WEBSITE30.jpg" alt="7" class="responsive-image">
             <img src="WEBSITE31.jpg" alt="8" class="responsive-image">
@@ -212,5 +286,3 @@
     </main>
 </body>
 </html>
-
-
