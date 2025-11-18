@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimum Housing Footprint</title>
+    <title>2</title>
     <style>
         /* 修改图片尺寸设置 */
         .responsive-image {
@@ -101,11 +101,13 @@
             width: 100%;
         }
 
+        /**/
         /* 主内容区域 */
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 3rem 2rem;
+            margin-top: 250px;
         }
 
         /* 项目标题区域 */
@@ -113,12 +115,48 @@
             text-align: center;
             margin-bottom: 3rem;
         }
-
-        .project-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #222;
+        
+        .project-header h2 {
+            font-size: 1.7rem;/*1.7*/
+            margin-bottom: 3.5rem;/*2.5*/
+            color: #000000;
         }
+
+        .project-header h5 {
+            font-size: 0.9rem;
+            color: #000000;
+            font-weight: normal;
+            line-height: 1.1;/*1.4*/
+        }
+
+        /* 为第一个h5元素（Live! Share! House-In Hongkong）增加底部间距 */
+        .project-header h5:first-of-type {
+            font-size: 1.3rem;
+            margin-bottom: 3rem; /* 增加第一个h5元素的底部间距 */
+        }
+
+        /* 文字描述 */
+        .text-content {
+            font-size: 15px;/*15*/
+            line-height: 1.1;/*1.4*/
+            color: #000000;
+            font-weight: normal;
+            text-align: justify;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* 段落间距设置 */
+        .text-content p {
+            margin-bottom: 1em;
+        }
+
+        /* 专门针对最后一个段落的间距设置 */
+        .text-content p:last-child {
+            margin-bottom: 30rem;/*17*/
+        }
+
+        /**/
 
         /* 图片和按钮容器 */
         .content-wrapper {
@@ -198,8 +236,21 @@
     <main>
         <a href="research.html" class="back-button">&#10094;</a>
 
+        <div class="container">
+            <div class="project-header">
+                <h5><strong>Minimum Housing Footprint</strong></h5>
+                <h5>2024 SPRING</h5>
+                <h5>Independent Study</h5>
+                <h5>Cornell University_AAP_Housing Innovation Lab</h5>
+                <h5>Instructor: Katharina Kral</h5>
+            </div>
+            
+            <div class="text-content">
+                <p>The Minimum Housing Footprint research investigates the relationship between humans and residential spatial organization through an analysis of furniture dimensions and the circulation spaces required for functionality. Drawing on Neufert’s Architect’s Data and Herman Hertzberger’s principles of polyvalent design, a modular furniture system was developed to align with contemporary housing needs. This system categorizes furniture by primary activities—eating, cooking, working, gathering, bathing, and sleeping—rather than assigning them to specific rooms. With that, it allows users to define the purpose of each space. This approach emphasizes flexibility and adaptability, aiming to redefine residential layouts to better support the diverse and evolving needs of modern living.</p>
+            </div>
+        </div>
+
         <div class="image-container">
-            <img src="WEBSITE38.jpg" alt="1" class="responsive-image">
             <img src="WEBSITE39.jpg" alt="2" class="responsive-image">
             <img src="WEBSITE40.jpg" alt="3" class="responsive-image">
             <img src="WEBSITE41.jpg" alt="4" class="responsive-image">
@@ -209,9 +260,4 @@
         </div>
     </main>
 </body>
-
 </html>
-
-
-
-
