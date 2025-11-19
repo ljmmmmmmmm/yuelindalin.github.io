@@ -44,6 +44,28 @@
             font-family: 'arial', serif;
         }
 
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.6;
+            /* 确保body也使用Alegreya字体 */
+            font-family: 'arial', serif;
+        }
+
+        main {
+            flex: 1 0 auto;
+            width: 100%;
+        }
+
         body {
             background-color: #ffffff;
             color: #333;
@@ -194,6 +216,20 @@
 
         /* 响应式设计 */
         @media (max-width: 768px) {
+
+            footer {
+                padding: 1.5rem 1rem;
+            }
+
+            footer li {
+                display: block; /* 移动端改为垂直排列 */
+                margin: 0.5rem 0; /* 调整间距 */
+            }
+            
+            footer a {
+                font-size: 0.9rem; /* 移动端字体稍小 */
+            }
+
             .container {
                 padding: 2rem 1rem;
             }
@@ -218,6 +254,36 @@
                 margin: 0.5rem 1rem;
             }
         }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+            color: #000;
+            background: #fff;
+        }
+
+        footer li {
+            display: inline-block; /* 改为行内块元素，使li在同一行 */
+            margin: 0 1rem; /* 添加左右间距 */
+        }
+
+        /* 去掉链接下划线并设置黑色字体 */
+        footer a {
+            text-decoration: none; /* 取消下划线 */
+            color: #000; /* 字体变黑 */
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        /* 悬停效果 */
+        footer a:hover {
+            color: #666; /* 悬停时变为深灰色 */
+            text-decoration: none; /* 确保悬停时也没有下划线 */
+        }
+
     </style>
 </head>
 <body>
@@ -262,9 +328,14 @@
             <img src="WEBSITE54.jpg" alt="10" class="responsive-image">
         </div>
     </main>
+
+    <footer>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li><a href="https://www.linkedin.com/in/yue-lin-b8661b242/">Linkedin</a></li>
+            <li><a href="https://www.instagram.com/silverfish.in?igsh=MXc2ODh1d2I0dm9hcg%3D%3D&utm_source=qr">Instagram</a></li>
+        </ul>
+        <p>&copy; 2025 yuelindalin. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
-
-
-
-
