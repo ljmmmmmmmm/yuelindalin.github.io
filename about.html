@@ -317,12 +317,26 @@
                 padding: 2rem 1rem;
             }
             
+            nav {
+                padding: 0.8rem 0;
+            }
+            
             nav ul {
-                flex-wrap: wrap;
+                flex-wrap: nowrap; /* 水平滚动导航 */
+                justify-content: flex-start;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 0.5rem;
             }
             
             nav li {
-                margin: 0.5rem 1rem;
+                margin: 0 0.6rem;
+                flex-shrink: 0; /* 防止导航项压缩 */
+            }
+            
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.5rem 0;
             }
             
             .two-column {
@@ -533,6 +547,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
