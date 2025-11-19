@@ -233,6 +233,47 @@
             color: #000;
             background: #fff;
         }
+
+        @media (max-width: 428px) {
+            .container {
+                padding: 1rem !important;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            
+            .project-image {
+                padding-bottom: 80% !important;
+            }
+            
+            /* 确保图片正确显示 */
+            .project-image img {
+                width: 100% !important;
+                height: auto !important;
+            }
+            
+            /* 导航栏移动端优化 */
+            nav ul {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 0.5rem;
+            }
+            
+            nav li {
+                margin: 0 0.8rem;
+                flex-shrink: 0;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+                white-space: nowrap;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -347,6 +388,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
