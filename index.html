@@ -101,6 +101,13 @@
             /* 确保主内容区域使用Alegreya字体 */
             font-family: 'arial', serif;
         }
+
+        #hero h1:nth-child(2) {
+            font-size: 1.1rem;
+            color: #000000;
+            margin-top: 0.5rem;
+            line-height: 1.4;
+        }
         
         /* 幻灯片和项目相关样式 */
         .slide-info {
@@ -265,6 +272,11 @@
         /**/
         /* 响应式设计调整 */
         @media only screen and (max-width: 428px) {
+
+            #hero h1:nth-child(2) {
+                font-size: 0.9rem;
+            }
+            
             nav {
                 padding: 0.8rem 0;
             }
@@ -493,6 +505,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
