@@ -310,72 +310,60 @@
             color: #000;
             background: #fff;
         }
-
-         /**/
+        
         /* 响应式设计调整 */
-        @media only screen and (max-width: 428px) {
-            nav {
-                padding: 0.8rem 0;
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
             }
             
             nav ul {
-                flex-wrap: nowrap; /* 水平滚动导航 */
-                justify-content: flex-start;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                padding-bottom: 0.5rem;
+                flex-wrap: wrap;
             }
             
             nav li {
-                margin: 0 0.6rem;
-                flex-shrink: 0; /* 防止导航项压缩 */
+                margin: 0.5rem 1rem;
             }
             
-            nav a {
-                font-size: 0.85rem;
-                padding: 0.5rem 0;
+            .two-column {
+                flex-direction: column;
             }
             
-            #hero {
-                padding: 1.5rem 1rem;
+            .column {
+                width: 100%;
+                margin-bottom: 15px;
             }
             
-            #hero h1 {
-                font-size: 1.6rem;
+            /* 移动端调整教育信息布局 */
+            .education-item {
+                flex-direction: column;
+                align-items: flex-start;
             }
             
-            #hero h1:last-of-type {
-                font-size: 1rem;
-                line-height: 1.4;
+            .education-date {
+                margin-left: 0;
+                margin-top: 2px;
             }
             
-            .slider-wrapper {
-                padding: 0.5rem 0;
+            /* 移动端调整缩进 */
+            .resume-item .indented-topic {
+                padding-left: 15px;
             }
             
-            .slide img {
-                width: 95%;
+            .description {
+                padding-left: 15px;
             }
             
-            .slider-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 1.5rem;
+            /* 移动端调整项目标题与日期布局 */
+            .project-title-with-date {
+                flex-direction: column;
+                align-items: flex-start;
             }
             
-            /* 安全区域适配 */
-            @supports (padding: max(0px)) {
-                #hero, #project-content-area, footer {
-                    padding-left: max(1rem, env(safe-area-inset-left));
-                    padding-right: max(1rem, env(safe-area-inset-right));
-                }
-                
-                footer {
-                    padding-bottom: max(2rem, env(safe-area-inset-bottom));
-                }
+            .project-date {
+                margin-top: 2px;
             }
         }
-        /**/
     </style>
 </head>
 <body>
@@ -545,6 +533,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
