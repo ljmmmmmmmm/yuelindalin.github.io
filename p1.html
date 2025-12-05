@@ -5,7 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live! Share! House-In Hongkong</title>
     <style>
-        /* 基础样式重置 */
+        .responsive-image {
+            width: 145%;
+            max-width: 1000%;
+            height: auto;
+            display: block;
+            margin: 0rem;
+        }
+
+        .image-container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .image-container {
+                width: 95%;
+            }
+            .responsive-image {
+                width: 90%;
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -26,7 +52,6 @@
             background-color: #fff;
             color: #000;
             line-height: 1.6;
-            /* 确保body也使用Alegreya字体 */
             font-family: 'arial', serif;
         }
 
@@ -35,7 +60,12 @@
             width: 100%;
         }
 
-        /* 统一导航栏样式 - 与projects.html保持一致 */
+        body {
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
         nav {
             background-color: #fff;
             padding: 1.5rem 0;
@@ -50,7 +80,7 @@
             display: flex;
             justify-content: center;
             max-width: 1200px;
-            margin: auto;
+            margin: 0 auto;
         }
 
         nav li {
@@ -86,7 +116,6 @@
             width: 100%;
         }
 
-        /* 主内容区域 */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -94,15 +123,14 @@
             margin-top: 250px;
         }
 
-        /* 项目标题区域 */
         .project-header {
             text-align: center;
             margin-bottom: 3rem;
         }
         
         .project-header h2 {
-            font-size: 1.7rem;/*1.7*/
-            margin-bottom: 3.5rem;/*2.5*/
+            font-size: 1.7rem;
+            margin-bottom: 3.5rem;
             color: #000000;
         }
 
@@ -110,29 +138,44 @@
             font-size: 0.9rem;
             color: #000000;
             font-weight: normal;
-            line-height: 1.1;/*1.4*/
+            line-height: 1.1;
         }
 
-        /* 为第一个h5元素（Live! Share! House-In Hongkong）增加底部间距 */
         .project-header h5:first-of-type {
             font-size: 1.3rem;
-            margin-bottom: 3rem; /* 增加第一个h5元素的底部间距 */
+            margin-bottom: 3rem;
         }
 
-        /* 图片和按钮容器 */
+        .text-content {
+            font-size: 15px;
+            line-height: 1.1;
+            color: #000000;
+            font-weight: normal;
+            text-align: justify;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .text-content p {
+            margin-bottom: 1em;
+        }
+
+        .text-content p:last-child {
+            margin-bottom: 30rem;
+        }
+
         .content-wrapper {
             position: relative;
             margin-bottom: 2rem;
         }
 
-        /* 修改返回按钮样式，使其固定在页面左上角 */
         .back-button {
-            position: fixed; /* 改为fixed定位，相对于视口 */
-            top: 100px; /* 距离顶部100px，在导航栏下方 */
-            left: 280px; /* 距离左侧20px */
-            width: auto; /* 宽度自适应内容 */
-            height: auto; /* 高度自适应 */
-            background-color: rgba(0, 0, 0, 0); /* 半透明黑色背景 */
+            position: fixed;
+            top: 100px;
+            left: 280px;
+            width: auto;
+            height: auto;
+            background-color: rgba(0, 0, 0, 0);
             color: rgb(0, 0, 0);
             border: none;
             border-radius: 5px;
@@ -142,7 +185,7 @@
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            z-index: 99; /* 确保在内容上层但低于导航栏 */
+            z-index: 99;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -153,115 +196,26 @@
             transform: scale(1.1);
         }
 
-        /* 图片容器 */
-        .image-container {
-            width: 100%;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* 文字描述 */
-        .text-content {
-            font-size: 15px;/*15*/
-            line-height: 1.1;/*1.4*/
-            color: #000000;
-            font-weight: normal;
-            text-align: justify;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* 段落间距设置 */
-        .text-content p {
-            margin-bottom: 1em;
-        }
-
-        /* 专门针对最后一个段落的间距设置 */
-        .text-content p:last-child {
-            margin-bottom: 17rem;
-        }
-
-        /* 专门针对第二个project-header的间距设置 */
-        .info-section {
-            margin-top: 1rem;
-            position: relative;
-            min-height: 300px; /* 增加最小高度，为向下移动的文本提供更多空间 */
-        }
-
-        /* 左下角文本样式 */
-        .info-text {
-            position: absolute;
-            left: -200px;
-            bottom: -240px; 
-            font-size: 16px;/*14*/
-            line-height: 1;
-            color: #000000;
-            text-align: left;
-            max-width: 400px;
-        }
-
-        .info-text p {
-            margin: 0.3rem 0;
-        }
-
-        .info-text p:first-child {
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 0.5rem;
-        }
-
-        /* 在HONG KONG下方添加空白行 */
-        .info-text p:first-child::after {
-            content: "";
-            display: block;
-            height: 1.2rem; /* 空白行高度 */
-        }
-
-        /* 在Quantity of District: 18和New Territories之间添加空白行 */
-        .info-text p:nth-child(7) {
-            margin-bottom: 5rem; /* 在Quantity of District: 18后添加空白行 */
-        }
-
-        /* 加粗冒号前的文本 */
-        .info-text strong {
-            font-weight: bold;
-        }
-
-        /* 响应式设计 */
         @media (max-width: 768px) {
-
             footer {
                 padding: 1.5rem 1rem;
             }
 
             footer li {
-                display: block; /* 移动端改为垂直排列 */
-                margin: 0.5rem 0; /* 调整间距 */
+                display: block;
+                margin: 0.5rem 0;
             }
             
             footer a {
-                font-size: 0.9rem; /* 移动端字体稍小 */
+                font-size: 0.9rem;
             }
-
 
             .container {
                 padding: 2rem 1rem;
             }
             
-            .project-header h2 {
-                font-size: 1.8rem;
-                margin-bottom: 1.5rem;
-            }
-            
-            .project-header h5:first-of-type {
-                margin-top: 1.5rem;
+            .project-header h1 {
+                font-size: 2rem;
             }
             
             .back-button {
@@ -271,7 +225,6 @@
                 font-size: 1rem;
             }
             
-            /* 响应式导航栏 */
             nav ul {
                 flex-wrap: wrap;
             }
@@ -279,36 +232,8 @@
             nav li {
                 margin: 0.5rem 1rem;
             }
-            
-            /* 移动端调整文本大小 */
-            .text-content {
-                font-size: 10px;
-                margin-bottom: 1rem;
-            }
-            
-            /* 移动端调整信息部分间距 */
-            .info-section {
-                margin-top: 1rem;
-                min-height: 250px; /* 移动端调整最小高度 */
-            }
-            
-            /* 移动端调整左下角文本 */
-            .info-text {
-                font-size: 12px;
-                max-width: 100%;
-                position: relative;
-                margin-top: 1rem;
-                bottom: auto;
-                left: auto;
-            }
-            
-            /* 移动端调整最后一段的间距 */
-            .text-content p:last-child {
-                margin-bottom: 1.5rem;
-            }
         }
 
-        /* 页脚样式 */
         footer {
             text-align: center;
             padding: 2rem;
@@ -319,22 +244,98 @@
         }
 
         footer li {
-            display: inline-block; /* 改为行内块元素，使li在同一行 */
-            margin: 0 1rem; /* 添加左右间距 */
+            display: inline-block;
+            margin: 0 1rem;
         }
 
-        /* 去掉链接下划线并设置黑色字体 */
         footer a {
-            text-decoration: none; /* 取消下划线 */
-            color: #000; /* 字体变黑 */
+            text-decoration: none;
+            color: #000;
             font-size: 1rem;
             transition: color 0.3s ease;
         }
 
-        /* 悬停效果 */
         footer a:hover {
-            color: #666; /* 悬停时变为深灰色 */
-            text-decoration: none; /* 确保悬停时也没有下划线 */
+            color: #666;
+            text-decoration: none;
+        }
+
+        /* 翻页功能专用样式 */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            display: none;
+            justify-content: center;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slider-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: -280px;
+        }
+
+        .next-btn {
+            right: -280px;
+        }
+
+        .static-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        /* 移动端响应式调整 */
+        @media (max-width: 768px) {
+            .slider-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .prev-btn {
+                left: 5px;
+            }
+            
+            .next-btn {
+                right: 5px;
+            }
         }
 
     </style>
@@ -368,31 +369,200 @@
                 <p>Recent government responses - prefab pilots, site clearance, and regulatory guidelines released in 2024 - fail to engage the interior scale where overcrowding is most acute. <span style="color: red;">This thesis reframes SDUs not as code violations, but as architectural sites for intervention. It develops a percentage based retrofit model, calibrated to the density of SDUs in each building, with three tiers: light, moderate, and full building retrofits. These range from layout improvements and ventilation fixes to the integration of shared kitchens, study nooks, and rooftop gathering spaces.</span></p>
                 <p>Using Chungking Mansions as a prototype, the proposal demonstrates how tenant centered design and modular spatial systems can convert overcrowded housing into resilient, community driven domestic infrastructure. By aligning policy, design, and lived experience, the project positions SDUs as an opportunity to redefine urban housing from within.</p>
             </div>
+        </div>
+
+        <div class="image-container">
+
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web.jpg" alt="1" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web2.jpg" alt="2" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web3.jpg" alt="3" class="responsive-image">
+            </div>
             
-            <div class="project-header info-section">
-                <h5>Coming soon...</h5>
-                <!--
-                <h5>General Information About Hongkong</h5>
+            <div class="slider-container" id="slider1">
+                <button class="slider-btn prev-btn">&#10094;</button>
                 
-                <div class="info-text">
-                    <p>HONG KONG</p>
-                    <p><strong>Location:</strong> South Coast of Mainland China</p>
-                    <p><strong>Total Area:</strong> Around 1,100 square kilometers</p>
-                    <p><strong>Population:</strong> Around 7.5 million people</p>
-                    <p><strong>Government:</strong> Special Administrative Region of China</p>
-                    <p><strong>Quantity of Island:</strong> 263</p>
-                    <p><strong>Quantity of District:</strong> 18</p>
-                    <p><strong>New Territories</strong></p>
-                    <p>1. Island District</p>
-                    <p>2. Kwai Tsing District</p>
-                    <p>3. North District</p>
-                    <p>4. Sai Kung District</p>
-                    <p>5. Sha Tin District</p>
-                    <p>6. Tai Po District</p>
-                    <p>7. Tsuen Wan District</p>
-                    <p>8. Tuen Mun District</p>
-                    <p>9. Yuen Long District</p>
-                </div>-->
+                <div class="slider-track">
+                    <div class="slide active">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web4.jpg" alt="4" class="responsive-image">
+                    </div>
+                    <div class="slide">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web5.jpg" alt="5" class="responsive-image">
+                    </div>
+                </div>
+                
+                <button class="slider-btn next-btn">&#10095;</button>
+                
+            </div>
+
+            <div class="slider-container" id="slider2">
+                <button class="slider-btn prev-btn">&#10094;</button>
+                
+                <div class="slider-track">
+                    <div class="slide active">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web6.jpg" alt="6" class="responsive-image">
+                    </div>
+                    <div class="slide">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web7.jpg" alt="7" class="responsive-image">
+                    </div>
+                    <div class="slide">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web8.jpg" alt="8" class="responsive-image">
+                    </div>
+                </div>
+                
+                <button class="slider-btn next-btn">&#10095;</button>
+                
+            </div>
+
+            <div class="slider-container" id="slider2">
+                <button class="slider-btn prev-btn">&#10094;</button>
+                
+                <div class="slider-track">
+                    <div class="slide active">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web9.jpg" alt="9" class="responsive-image">
+                    </div>
+                    <div class="slide">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web10.jpg" alt="10" class="responsive-image">
+                    </div>
+                    <div class="slide">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web11.jpg" alt="11" class="responsive-image">
+                    </div>
+                    <div class="slide">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web12.jpg" alt="12" class="responsive-image">
+                    </div>
+                    <div class="slide">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web13.jpg" alt="13" class="responsive-image">
+                    </div>
+                </div>
+                
+                <button class="slider-btn next-btn">&#10095;</button>
+                
+            </div>
+
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web14.jpg" alt="14" class="responsive-image">
+            </div>
+
+            <div class="slider-container" id="slider2">
+                <button class="slider-btn prev-btn">&#10094;</button>
+                
+                <div class="slider-track">
+                    <div class="slide active">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web15.jpg" alt="15" class="responsive-image">
+                    </div>
+                    <div class="slide">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web16.jpg" alt="16" class="responsive-image">
+                    </div>
+                    <div class="slide">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web17.jpg" alt="17" class="responsive-image">
+                    </div>
+                    <div class="slide">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web18.jpg" alt="18" class="responsive-image">
+                    </div>
+                </div>
+                
+                <button class="slider-btn next-btn">&#10095;</button>
+                
+            </div>
+
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web19.jpg" alt="19" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web20.jpg" alt="20" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web21.jpg" alt="21" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web22.jpg" alt="22" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web23.jpg" alt="23" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web24.jpg" alt="24" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web25.jpg" alt="25" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web26.jpg" alt="26" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web27.jpg" alt="27" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web28.jpg" alt="28" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web29.jpg" alt="29" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web30.jpg" alt="30" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web31.jpg" alt="31" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web32.jpg" alt="32" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web33.jpg" alt="33" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web34.jpg" alt="34" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web35.jpg" alt="35" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web36.jpg" alt="36" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web37.jpg" alt="37" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web38.jpg" alt="38" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web39.jpg" alt="39" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web40.jpg" alt="40" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web41.jpg" alt="41" class="responsive-image">
+            </div>
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web42.jpg" alt="42" class="responsive-image">
+            </div>
+
+            <div class="slider-container" id="slider2">
+                <button class="slider-btn prev-btn">&#10094;</button>
+                
+                <div class="slider-track">
+                    <div class="slide active">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web43.jpg" alt="43" class="responsive-image">
+                    </div>
+                    <div class="slide">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web44.jpg" alt="44" class="responsive-image">
+                    </div>
+                    <div class="slide">
+                        <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web45.jpg" alt="45" class="responsive-image">
+                    </div>
+                </div>
+                
+                <button class="slider-btn next-btn">&#10095;</button>
+                
+            </div>
+
+            <div class="static-image">
+                <img src="C:\Users\林家铭\Desktop\projects\1\Project 1 web46.jpg" alt="46" class="responsive-image">
             </div>
         </div>
     </main>
@@ -404,6 +574,74 @@
         </ul>
         <p>&copy; 2025 yuelindalin. All rights reserved.</p>
     </footer>
-    
+
+    <script>
+        // 翻页功能JavaScript - 修复版本
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取所有滑块容器
+            const sliders = document.querySelectorAll('.slider-container');
+            
+            // 为每个滑块初始化翻页功能
+            sliders.forEach((slider, index) => {
+                const slides = slider.querySelectorAll('.slide');
+                const prevBtn = slider.querySelector('.prev-btn');
+                const nextBtn = slider.querySelector('.next-btn');
+                let currentSlide = 0;
+                const totalSlides = slides.length;
+                
+                // 只对有幻灯片的滑块启用翻页功能
+                if (totalSlides > 0) {
+                    // 显示指定索引的幻灯片
+                    function showSlide(index) {
+                        if (index >= totalSlides) {
+                            currentSlide = 0;
+                        } else if (index < 0) {
+                            currentSlide = totalSlides - 1;
+                        } else {
+                            currentSlide = index;
+                        }
+                        
+                        // 隐藏所有幻灯片
+                        slides.forEach(slide => {
+                            slide.classList.remove('active');
+                        });
+                        
+                        // 显示当前幻灯片
+                        slides[currentSlide].classList.add('active');
+                    }
+                    
+                    // 下一张幻灯片
+                    function nextSlide() {
+                        showSlide(currentSlide + 1);
+                    }
+                    
+                    // 上一张幻灯片
+                    function prevSlide() {
+                        showSlide(currentSlide - 1);
+                    }
+                    
+                    // 添加按钮事件监听
+                    prevBtn.addEventListener('click', prevSlide);
+                    nextBtn.addEventListener('click', nextSlide);
+                    
+                    // 添加键盘支持
+                    document.addEventListener('keydown', function(event) {
+                        // 只对当前活动的滑块响应键盘事件
+                        if (slider.getBoundingClientRect().top < window.innerHeight && 
+                            slider.getBoundingClientRect().bottom > 0) {
+                            if (event.key === 'ArrowLeft') {
+                                prevSlide();
+                            } else if (event.key === 'ArrowRight') {
+                                nextSlide();
+                            }
+                        }
+                    });
+                    
+                    // 初始化显示第一张幻灯片
+                    showSlide(0);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
